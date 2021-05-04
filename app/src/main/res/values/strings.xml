@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Tp_final_android</string>
+    <string name="title_new_question">Nouvelle question</string>
+    <string name="title_response">Votre réponse ?</string>
 </resources>

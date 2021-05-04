@@ -32,10 +32,10 @@ class QuestionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         if (question.response.isEmpty()){
             isChecked.text = "KO"
-            isChecked.setTextColor(Color.parseColor("#FFFFFF"))
+            isChecked.setTextColor(Color.RED)
         }else{
             isChecked.text = "OK"
-            isChecked.setTextColor(Color.parseColor("#00FF00"))
+            isChecked.setTextColor(Color.GREEN)
         }
     }
 }
