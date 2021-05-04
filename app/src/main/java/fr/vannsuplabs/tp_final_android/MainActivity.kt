@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: QuestionAdapter
     private val database = FirebaseFirestore.getInstance()
     private val questionReference = database.collection("Questions")
+    private var originalList = mutableListOf<Question>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         initRecyclerView()
         retrieveData()
-
+        setupActionButton()
     }
 
     private fun initRecyclerView() {
@@ -42,9 +43,24 @@ class MainActivity : AppCompatActivity() {
         itemTouchHelper.attachToRecyclerView(recycler_view)
     }
     private fun retrieveData() {
-        questionReference.addSnapshotListener({
-            liste
-        })
+        originalList.clear()
+         questionReference.get().addOnCompleteListener{ task ->
+             if (task.isSuccessful) {
+                 task.result?.map { document ->
+                     val question = document.toObject(Question::class.java).apply {
+                         this.firebaseId = document.id
+                     }
+                     originalList.add(question)
+                 }
+                 if (originalList.isNotEmpty()){
+                     setupRecyclerView(originalList)
+                 }
+             }
+         }
+    }
+
+    private fun setupRecyclerView(questionList: MutableList<Question>) {
+        adapter.setList(questionList)
     }
 
     private fun onClickListener(question: Question, position: Int) {
@@ -55,4 +71,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun setupActionButton() {
+
+    }
 }

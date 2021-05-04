@@ -42,4 +42,10 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionViewHolder>(){
     fun getTaskAt(position: Int): Question {
         return this.list[position]
     }
+
+    fun setList(questionList: List<Question>) {
+        this.list.clear()
+        this.list.addAll(questionList)
+        notifyDataSetChanged()
+    }
 }
