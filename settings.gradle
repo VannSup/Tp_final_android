@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Tp_final_android"
