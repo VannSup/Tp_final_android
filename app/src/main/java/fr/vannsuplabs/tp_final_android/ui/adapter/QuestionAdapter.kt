@@ -39,7 +39,7 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionViewHolder>(){
         notifyItemRemoved(position)
     }
 
-    fun getTaskAt(position: Int): Question {
+    fun getQuestionAt(position: Int): Question {
         return this.list[position]
     }
 

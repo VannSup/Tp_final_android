@@ -2,4 +2,9 @@
     <string name="app_name">Tp_final_android</string>
     <string name="title_new_question">Nouvelle question</string>
     <string name="title_response">Votre réponse ?</string>
+    <string name="description_add_button">add new question button</string>
+    <string name="hint_question_text_input_layout">Question ?</string>
+    <string name="hint_response_text_input_layout">Votre réponse</string>
+    <string name="text_button_delete">Supprimer</string>
+    <string name="photo_progress_bar_text">Enregistrement de l\'image ...</string>
 </resources>

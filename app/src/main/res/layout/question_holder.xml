@@ -12,17 +12,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/holder_item_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
         <TextView
             android:id="@+id/holder_question"
-            android:layout_width="330dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/margin16"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:singleLine="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/holder_response"
+            app:layout_constraintStart_toEndOf="@id/holder_item_image"
+            app:layout_constraintTop_toTopOf="@id/holder_item_image"
             tools:text="Nom ?" />
 
         <TextView
@@ -39,15 +52,12 @@
 
         <TextView
             android:id="@+id/holder_response"
-            android:layout_width="330dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/margin8"
+            app:layout_constraintStart_toStartOf="@id/holder_question"
             app:layout_constraintTop_toBottomOf="@id/holder_question"
             tools:text="KERLEGUER" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
